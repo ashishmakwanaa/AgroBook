@@ -18,19 +18,22 @@ const SignupPage = () => {
     }
   );
 
-  async function storeData() {
+  async function storeUser() {
     const url = "http://localhost:4000/auth/createuser";
+    setLoading(true)
 
     const res = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData)
     });
 
-    setLoading(false);
     const data = await res.json();
+
+    console.log(data["message"])
+    console.log(res.ok)
 
     if (res.ok) {
       swal({
@@ -40,14 +43,14 @@ const SignupPage = () => {
         timer: 3000
       })
 
-
       setFormData({
         name: "",
         email: "",
         password: "",
         confirmPassword: ""
       });
-      navigate("./Login")
+      navigate("/login")
+
     } else {
       swal({
         title: data["message"],
@@ -56,34 +59,35 @@ const SignupPage = () => {
         timer: 3000
       })
     }
+    setLoading(false)
 
   }
 
 
   const handleSubmit = (e) => {
+    try {
+      e.preventDefault()
+      const password = formData.password;
+      const conformPassword = formData.confirmPassword;
 
-    e.preventDefult();
-    const password = formData.password;
-    const conformPassword = formData.confirmPassword;
-
-    if (password !== conformPassword) {
-
-      swal({
-        title: "Password Not Match",
-        icon: "error",
-        button: false,
-        timer: 3000
-      })
-      setFormData({ formData })
-    } else {
-      setLoading(true);
-      storeData();
-      setLoading(false);
+      if (password != conformPassword) {
+        swal({
+          title: "Password Not Match",
+          icon: "error",
+          button: false,
+          timer: 3000
+        })
+      }
+      else {
+        storeUser();
+      }
+    } catch (err) {
+      window.alert(err)
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center  justify-center">
       <video
         className="absolute top-0 left-0 object-cover w-full h-full opacity-80 z-0"
         loop
@@ -96,16 +100,16 @@ const SignupPage = () => {
         />
       </video>
 
-      <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg z-10">
+      <div className="w-full opacity-80 max-w-lg p-8 bg-white rounded-lg shadow-lg z-10">
         <h2 className="text-2xl text-center font-semibold mb-6"><span className='text-green-600 no-underline hover:underline hover:cursor-pointer'>Grow With Us,</span> Sign Up Today!</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="block w-full px-4 py-3 mb-4 border rounded-lg placeholder-gray-400 bg-gray-50 text-gray-800"
+            className="block w-full px-4 py-3 mb-4 border rounded-lg placeholder-gray-600 bg-slate-200 text-gray-800"
             placeholder="Enter Your Name"
             required
           />
@@ -115,7 +119,7 @@ const SignupPage = () => {
             name="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="block w-full px-4 py-3 mb-4 border rounded-lg placeholder-gray-400 bg-gray-50 text-gray-800"
+            className="block w-full px-4 py-3 mb-4 border rounded-lg placeholder-gray-600 bg-slate-200 text-gray-800"
             placeholder="Enter Your Email"
             required
           />
@@ -125,7 +129,7 @@ const SignupPage = () => {
             name="password"
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            className="block w-full px-4 py-3 mb-4 border rounded-lg placeholder-gray-400 bg-gray-50 text-gray-800"
+            className="block w-full px-4 py-3 mb-4 border rounded-lg placeholder-gray-600 bg-slate-200 text-gray-800"
             placeholder="Enter Password"
             required
           />
@@ -134,19 +138,17 @@ const SignupPage = () => {
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-            className="block w-full px-4 py-3 mb-6 border rounded-lg placeholder-gray-400 bg-gray-50 text-gray-800"
+            className="block w-full px-4 py-3 mb-6 border rounded-lg placeholder-gray-600 bg-slate-200 text-gray-800"
             placeholder="Conform Password"
             required
           />
-          {/* <button
-            type="submit"
-            className="w-full py-3 text-white bg-green-500 rounded-lg hover:bg-green-600 transition duration-300"
-          >
-            Sign Up
-          </button> */}
-          <div className="p-2 w-full">
-            <button onClick={handleSubmit} className="w-full  place-items-center py-3 bg-green-500 rounded-lg text-white hover:bg-green-600  transition  duration-300 border-0"><span className='text-lg '></span>
-              {loading ? <TailSpin height={25} className=" place-items-center align-middle" color='white' /> : "SignUp"}
+          <div className="p-2 w-full ">
+            <button className="w-full  place-items-center py-3 bg-green-500 rounded-lg text-white hover:bg-green-600  transition  duration-300 border-0"><span className='text-lg '></span>
+              {loading ?
+                <div className='flex items-center justify-center '>
+                  <TailSpin height={25} color='white' />
+                </div>
+                : "SignUp"}
             </button>
           </div>
         </form>
