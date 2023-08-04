@@ -1,28 +1,22 @@
 
 import './App.css';
 // import Navbar from './component/Navbar';
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
-import HomePage from './component/HomePage';
-import SignupPage from './component/SignupPage';
-import Login from './component/Login';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import SignupPage from './component/SignupPage.js';
+import Login from './component/Login.js';
 
 function App() {
 
-  // const links = [
-  //      {name: "Home",link: "/"},
-  //      {name: "About",link:"/about"},
-  //      { name: "Services", link: "/services" },
-  //       { name: "Contact Us", link: "/contact" },
-  // ];
-  
+
   return (
-      <div> 
+    <div>
       <Routes>
-        <Route  path="/" element={<HomePage/>}/>
-        <Route  path="/signup" element={<SignupPage/>}/>
-        <Route  path="/login" element={<Login/>}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      </div>
+    </div>
 
   );
 }
