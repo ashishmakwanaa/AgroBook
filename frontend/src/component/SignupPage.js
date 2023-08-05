@@ -32,8 +32,8 @@ const SignupPage = () => {
 
     const data = await res.json();
 
-    console.log(data["message"])
-    console.log(res.ok)
+    // console.log(data["message"])
+    // console.log(res.ok)
 
     if (res.ok) {
       swal({
@@ -152,7 +152,7 @@ const SignupPage = () => {
             </button>
           </div>
         </form>
-        <p className="mt-4 text-center p-2 text-2xl text-gray-700 text-sm">
+        <p className="mt-4 text-center p-2  text-gray-700 text-sm">
           Already Have an Account?
           <Link to="/login" className="ml-1 text-green-500 font-semibold">
             Login
