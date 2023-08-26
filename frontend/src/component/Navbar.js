@@ -8,40 +8,7 @@ const Navbar = ({ links }) => {
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
-
-  // let Links = [
-  //     { name: "Home", link: "/" },
-  //     { name: "About", link: "/" },
-  //     { name: "Services", link: "/" },
-  //     { name: "Contact Us", link: "/" },
-  // ];
   return (
-    // <div className="shadow-md w-full fixed top-0 left-0 p-2 rounded-full">
-    //     <div className="flex justify-between item-center w-[92%] mx-auto">
-    //         <div className='cursor-pointer flex item-center font-[Poppins] '>
-    //             <img src={Logo} alt="" style={{ height: "60px", width: "73px" }} />
-    //             <h1 className="my-auto text-2xl">AgroBook</h1>
-    //         </div>
-    //         <ul className='flex md:flex-row flex-col item-center  my-auto position-fixed '>
-    //             {
-    //                 Links.map((link) => (
-    //                     <li key={link.name} className='md:ml-8 text-xl '>
-    //                         <a href={link.link} className='hover:text-green-800 p-2 hover:bg-green-600 hover:rounded-xl hover:text-white duration-200'>{link.name} </a>
-    //                     </li>
-    //                 ))
-    //             }
-    //         </ul>
-    //         <div className='my-auto'>
-    //             <button className='bg-green-800 text-white  px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2'>
-    //                 Sign In
-    //             </button>
-    //             <button className='bg-green-800 text-white  px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 '>
-    //                Log In
-    //             </button>
-    //         </div>
-
-    //     </div>
-    // </div>
     <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-white" style={{ zIndex: 100 }}>
       <div className="container mx-auto md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between">
