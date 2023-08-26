@@ -52,7 +52,7 @@ const HomePage = () => {
       <AboutUs show={showAbout}/>
       </div>
       <Service/>
-
+      
     </>
 
   )
