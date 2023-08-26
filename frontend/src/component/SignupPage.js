@@ -70,7 +70,7 @@ const SignupPage = () => {
       const password = formData.password;
       const conformPassword = formData.confirmPassword;
 
-      if (password != conformPassword) {
+      if (password !== conformPassword) {
         swal({
           title: "Password Not Match",
           icon: "error",
