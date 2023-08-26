@@ -9,6 +9,7 @@ const Navbar = ({ links }) => {
     setShowMobileMenu(!showMobileMenu);
   };
   return (
+
     <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-white" style={{ zIndex: 100 }}>
       <div className="container mx-auto md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between">
