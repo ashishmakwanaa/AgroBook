@@ -3,6 +3,7 @@ import Navbar from '../component/Navbar'
 import CarouselComponent from '../component/CarouselComp';
 import AboutUs from '../component/About';
 import Service from '../component/Service';
+import Contact from '../component/Contact';
 
 const HomePage = () => {
   const links = [
@@ -52,6 +53,7 @@ const HomePage = () => {
       <AboutUs show={showAbout}/>
       </div>
       <Service/>
+      <Contact/>
       
     </>
 

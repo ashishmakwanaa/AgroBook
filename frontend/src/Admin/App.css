@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Jost:ital,wght@1,300;1,400&family=Raleway:wght@300&family=Roboto:wght@300&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-color: rgb(175,232,188);
+}
+
+.customer_form_details h3{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Josefin Sans";
+  font-weight: bolder;
+}
+div.customer_form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 1%;
+}
+
+.my_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 1%;
+  font-weight: bold;
+}
+.form-row input,label{
+  padding: 8px;
+  margin: 10px;
+  font-family: "Raleway", Arial;
+}
+.form-row input{
+  width: 250px;
+  border-radius: 7px;
+  border: 3px solid rgb(175,232,188);
+  box-shadow: 3px 3px 5px -3px;
+  outline: none;
+}
+#address{
+  width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+  .customer_form {
+    flex-direction: row;
+  }
+
+  .form-row {
+    flex-direction: row;
+  }
+
+  .form-row input {
+    margin-right: 10px;
+  }
+}
+
+.customer_form_btn button{
+   font-family: "Raleway";
+   width: 150px;
+   padding: 5px;
+   border: 3px solid rgba(0, 0, 0, 0.18);
+   background-color: rgb(175,232,188);
+   border-radius: 5px;
+   transition: all 0.3s;
+}
+#form_btn:hover{
+  background-color: black;
+  color: rgb(175,232,188);
+  font-weight: bold;
+}
+
+.customer_form_btn{
+  text-align: center;
+}

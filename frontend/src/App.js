@@ -6,9 +6,13 @@ import HomePage from './Pages/HomePage';
 import SignupPage from './component/SignupPage.js';
 import Login from './component/Login.js';
 import Dashboard from './Pages/Dashboard.js';
+import Service from './component/Service';
+import Contact from './component/Contact';
+
 
 
 function App() {
+ 
 
   return (
 
@@ -18,6 +22,10 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/services" element={<Service />} />
+        <Route path="/contact" element={<Contact />} />
+
+
       </Routes>
       // </BrowserRouter>
     
