@@ -1,8 +1,12 @@
 import { React, useState } from 'react';
+import { useContext } from 'react';
 import Logo from '../images/Agro.png';
 import { Link } from 'react-router-dom';
-const Navbar = ({ links }) => {
+import { AppState } from '../App';
+import FormInput from '../Admin/FormInput';
 
+const Navbar = ({ links }) => {
+  const useAppState = useContext(AppState);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -27,26 +31,39 @@ const Navbar = ({ links }) => {
         <ul className={`md:flex md:flex-row md:space-x-4 ${showMobileMenu ? 'block mt-2 md:mt-0 ' : 'hidden md:block md:mt-0'} `}>
           {links.map((link) => (
             <li key={link.name} className="text-xl">
-            <Link to={link.link} className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-green-600 hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
+              <Link to={link.link} className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-green-600 hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
                 {link.name}
               </Link>
             </li>
           ))}
         </ul>
-
-        <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
-          <Link to="/signup">
-            <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2">
-              Sign In
-            </button>
-          </Link>
-          <Link to="/login">
-
-            <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200">
-              Log In
-            </button>
-          </Link>
-        </div>
+        {!useAppState.login ?
+          <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
+            <Link to="/signup">
+              <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2">
+                Sign In
+              </button>
+            </Link>
+            <Link to="/login">
+              <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200">
+                Log In
+              </button>
+            </Link>
+          </div>
+          :
+          <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
+            <Link to="/FormInput">
+              <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2">
+                AddCustomer
+              </button>
+            </Link>
+            <Link to="/">
+              <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200">
+                AddItem
+              </button>
+            </Link>
+          </div>
+        }
       </div>
     </div>
 
