@@ -27,7 +27,7 @@ const Navbar = ({ links }) => {
         <ul className={`md:flex md:flex-row md:space-x-4 ${showMobileMenu ? 'block mt-2 md:mt-0 ' : 'hidden md:block md:mt-0'} `}>
           {links.map((link) => (
             <li key={link.name} className="text-xl">
-              <Link to={link.link} className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-green-600 hover:rounded-xl hover:text-white duration-200`}>
+            <Link to={link.link} className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-green-600 hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
                 {link.name}
               </Link>
             </li>
