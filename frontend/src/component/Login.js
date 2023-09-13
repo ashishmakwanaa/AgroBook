@@ -5,7 +5,7 @@ import swal from "sweetalert"
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppState } from '../App';
-
+import Dashboard from '../Pages/Dashboard';
 const Login = () => {
   const useAppState = useContext(AppState);
   const navigate = useNavigate()
@@ -41,7 +41,7 @@ const Login = () => {
       //   password: "",
       //   confirmPassword: ""
       // });
-      navigate("/")
+      navigate("/dashboard")
 
     } else {
       swal({
