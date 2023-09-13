@@ -12,16 +12,12 @@ export default function Dashboard() {
 
     return (
         <>
-            {/* <div className='bg-lime-800'>
-
-                <Navbar links={links} />
-            </div> */}
             <div className='md:h-20 h-12'>
                 <Navbar links={links} />
             </div>
-            <div className='flex flex-row '>
-                <div className='md:w-1/4 w-2/4 bg-gray-200 border-2 p-4'>
-                    <table className='place-items-center w-full mt-4 text-lime-700 capitalize md:text-xl font-medium tracking-wide'>
+            <div className='flex flex-row mb-2 '>
+                <div className='md:w-1/4 w-2/4 bg-gray-200 border-2 p-4' >
+                    <table className='place-items-center w-full text-lime-700 capitalize md:text-xl font-medium tracking-wide'>
                         <tr className='hover:uppercase border-b-2 hover:bg-gray-300 border-slate-500 h-20 rounded-3xl flex items-center justify-center  cursor-pointer'>
                             DashBoard
                         </tr>
