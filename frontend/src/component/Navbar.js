@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import Logo from '../images/Agro.png';
 import { Link } from 'react-router-dom';
 import { AppState } from '../App';
-import FormInput from '../Admin/FormInput';
 
 const Navbar = ({ links }) => {
   const useAppState = useContext(AppState);
