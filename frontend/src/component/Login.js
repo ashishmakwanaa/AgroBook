@@ -52,12 +52,10 @@ const Login = () => {
       //   password: "",
       //   confirmPassword: ""
       // });
-      
-  
-     
+
       navigate("/")
       
-      
+
 
     } else {
       swal({
