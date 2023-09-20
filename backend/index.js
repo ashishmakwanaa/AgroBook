@@ -13,11 +13,11 @@ app.use(cors())
 
 //to send some information to server
 app.use(express.json());
-
+ 
 //Available Routes
 app.use("/auth", auth);
 
 
-app.listen(port, (port) => {
+app.listen(port, (err) => {
     console.log(`Server Running on port ${port}`)
 })

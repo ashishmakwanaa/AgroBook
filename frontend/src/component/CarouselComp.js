@@ -11,7 +11,7 @@ const CarouselComponent = ({ caption }) => {
     <Carousel autoPlay transitionTime={1000} infiniteLoop  showThumbs={false}>
       <div className='h-1/2'>
         <img src={Agro1} alt="" className='w-full h-[650px] opacity-100 ' />
-        <div className="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 transition duration-300 opacity-0 hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 transition duration-300 opacity-0 hover:opacity-100 ">
           <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12">
             {caption}
           </div>

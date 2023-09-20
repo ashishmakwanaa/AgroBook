@@ -5,6 +5,8 @@ import swal from "sweetalert"
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppState } from '../App';
+import { useData } from '../useContext/DataContext';
+
 const Login = () => {
   const useAppState = useContext(AppState);
   const navigate = useNavigate()
@@ -12,6 +14,9 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  
+  const { setData } = useData();
 
   async function validateData() {
     const url = "http://localhost:4000/auth/login";
@@ -25,6 +30,13 @@ const Login = () => {
     const data = await res.json();
     console.log(data);
     console.log(data["message"]);
+    console.log(data.data.user.username);
+    
+    const username = data.data.user.username;
+
+    setData(username);
+
+
     if (res.ok) {
       useAppState.setLogin(true);
       swal({
@@ -40,7 +52,12 @@ const Login = () => {
       //   password: "",
       //   confirmPassword: ""
       // });
-      navigate("/dashboard")
+      
+  
+     
+      navigate("/")
+      
+      
 
     } else {
       swal({
@@ -63,8 +80,11 @@ const Login = () => {
     }
   };
 
+
   return (
+    
     <div className="min-h-screen flex items-center justify-center">
+      
       <video
         className="absolute top-0 left-0 object-cover w-full h-full opacity-80 z-0"
         loop
@@ -119,4 +139,3 @@ const Login = () => {
 };
 
 export default Login;
-

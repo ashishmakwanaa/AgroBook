@@ -97,11 +97,13 @@ router.post("/login", [
 
         const data = {
             user: {
-                id: user.id
+                id: user.id,
+                username:user.name,
+                psw:user.password
             }
         }
 
-        return res.status(200).json({ message: "Successfully Loged In" })
+        return res.status(200).json({ message: "Successfully Loged In" ,data})
     } catch (error) {
         console.log(error.message)
         res.status(500).json({ message: "Internal server error" });

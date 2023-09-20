@@ -4,8 +4,11 @@ import CarouselComponent from '../component/CarouselComp';
 import AboutUs from '../component/About';
 import Service from '../component/Service';
 import Contact from '../component/Contact';
+import { useContext } from 'react';
+import { AppState } from '../App';
 
 const HomePage = () => {
+  const useAppState = useContext(AppState);
   const links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
@@ -24,7 +27,7 @@ const HomePage = () => {
   ];
 
 
-  const[showAbout,setshowAbout]=useState(false);
+  const [showAbout, setshowAbout] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +35,7 @@ const HomePage = () => {
       if (aboutSection && window.scrollY > aboutSection.offsetTop - window.innerHeight / 2) {
         setshowAbout(true);
       }
-     
+
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -40,21 +43,21 @@ const HomePage = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
+
 
 
   return (
     <>
-        <Navbar links={links} />
-        <div className='mt-14'>
-        <CarouselComponent caption={caption}/>
-        </div>
-      <div>
-      <AboutUs show={showAbout}/>
+      <Navbar links={links} />
+      <div className='mt-14'>
+        <CarouselComponent caption={caption} />
       </div>
-      <Service/>
-      <Contact/>
-      
+      <div>
+        <AboutUs show={showAbout} />
+      </div>
+      <Service />
+      <Contact />
+
     </>
 
   )
