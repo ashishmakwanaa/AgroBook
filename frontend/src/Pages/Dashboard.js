@@ -3,6 +3,8 @@ import Navbar from "../component/Navbar.js"
 import Itemtable from '../component/Itemtable.js';
 import { Link } from 'react-router-dom';
 import Contact from '../component/Contact.js';
+import AddCustomer from '../Admin/FormInput.js';
+import ItemForm from '../Admin/ItemForm.js';
 // import { Link } from 'react-router-dom'
 export default function Dashboard() {
     const links = [
@@ -19,14 +21,23 @@ export default function Dashboard() {
     const [itemList, setitemList] = useState(false);
     const [recent, setrecent] = useState(false);
     const [invoice, setnvoice] = useState(false);
+    const [addCustomer,setAddCustomer] = useState(false);
+    const [addItem,setAddItem] = useState(false);
 
+
+
+    // var props={
+    //     setAddCustomer,
+    //     setContact,
+    //     setitemList
+    // }
     return (
         <>
             <div className='md:h-20 h-12'>
-                <Navbar links={links} />
+                <Navbar links={links} setAddCustomer={setAddCustomer} setitemList={setitemList} setContact={setContact} setAddItem={setAddItem}/>
             </div>
             <div className='flex flex-row mb-2 '>
-                <div className='md:w-1/4 w-2/4 bg-gray-200 border-2 p-4' >
+                <div className='md:w-1/6 w-2/4 bg-gray-200 border-2 p-4 my_side_bar' >
                     <table className='place-items-center w-full text-lime-700 capitalize md:text-xl font-medium tracking-wide'>
                         <tr className='hover:uppercase border-b-2 hover:bg-gray-300 border-slate-500 h-20 rounded-3xl flex items-center justify-center  cursor-pointer'>
                             DashBoard
@@ -39,7 +50,9 @@ export default function Dashboard() {
                         </tr>
                         <tr className=' hover:uppercase mt-4 border-b-2 hover:bg-gray-300 border-slate-500 h-20 rounded-3xl flex items-center justify-center cursor-pointer'>
                             <Link to="/" onClick={() => {
+                                setAddItem(false)
                                 setContact(false)
+                                setAddCustomer(false)
                                 setitemList(true)
                             }}>
                                 Item List
@@ -55,7 +68,9 @@ export default function Dashboard() {
                         <tr className='hover:uppercase mt-4 border-b-2 hover:bg-gray-300  border-slate-500 h-20 rounded-3xl flex items-center justify-center  cursor-pointer'>
 
                             <Link to="/" onClick={() => {
+                                setAddItem(false)
                                 setitemList(false)
+                                setAddCustomer(false)
                                 setContact(true)
                             }}>
                                 Contact
@@ -67,10 +82,9 @@ export default function Dashboard() {
 
                     </table>
                 </div>
-                <div className='md:w-3/4 w-2/4'>
-
-
-                    {itemList ? <Itemtable /> : contact ? <Contact /> : null}
+                <div className='md:w-3/4 w-2/4 ml-72'>
+                            
+                    {itemList ? <Itemtable /> : contact ? <Contact /> : addCustomer ? <AddCustomer /> : addItem ? <ItemForm/>: null}
 
 
                 </div>

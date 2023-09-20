@@ -14,7 +14,7 @@ const HomePage = () => {
     { name: "About", link: "/about" },
     { name: "Services", link: "/services" },
     { name: "Contact Us", link: "/contact" },
-    { name: "Dashboard", link: "/dashboard" },
+    // { name: "Dashboard", link: "/dashboard" },
   ];
 
   const caption = [
