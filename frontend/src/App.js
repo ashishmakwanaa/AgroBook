@@ -10,6 +10,7 @@ import Service from './component/Service';
 import Contact from './component/Contact';
 import FormInput from './Admin/FormInput';
 import { createContext, useState } from 'react';
+import Itemtable from './component/Itemtable';
 const AppState = createContext();
 
 
@@ -22,10 +23,15 @@ function App() {
     <AppState.Provider value={{ login, setLogin }}>
       <div className='app'>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {
+            login ?
+            <Route path="/" element={<Dashboard />} />
+            :
+            <Route path="/" element={<HomePage />} />
+          }
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/itemtable" element={<Itemtable />} />
           <Route path="/services" element={<Service />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/FormInput" element={<FormInput />} />

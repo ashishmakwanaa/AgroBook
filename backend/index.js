@@ -18,6 +18,6 @@ app.use(express.json());
 app.use("/auth", auth);
 
 
-app.listen(port, (port) => {
+app.listen(port, (err) => {
     console.log(`Server Running on port ${port}`)
 })

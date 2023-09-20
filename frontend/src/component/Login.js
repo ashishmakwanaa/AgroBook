@@ -41,7 +41,7 @@ const Login = () => {
       //   password: "",
       //   confirmPassword: ""
       // });
-      navigate("/dashboard")
+      navigate("/")
 
     } else {
       swal({
