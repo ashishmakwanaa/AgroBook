@@ -13,7 +13,7 @@ app.use(cors())
 
 //to send some information to server
 app.use(express.json());
-
+ 
 //Available Routes
 app.use("/auth", auth);
 
