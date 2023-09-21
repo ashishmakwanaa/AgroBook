@@ -11,7 +11,7 @@ const ItemForm = () => {
             <div className="Item_inputs">
                <div className="item_input_row">
                 <label htmlFor="name_items">Name: </label><br />
-                <input type="text" name="name_item" id="name_item" />
+                <input type="text" name="name_item" id="name_item" placeholder=' Enter Item Name '/>
                </div>
                <div className="item_input_row">
                <label for="category">Category:</label><br />
@@ -23,17 +23,17 @@ const ItemForm = () => {
                </div>
                <div className="item_input_row">
                 <label htmlFor="item_cp" >Cost Price:</label><br />
-                <input type="number" name="item_cp" id="item_cp" />
+                <input type="number" name="item_cp" id="item_cp" placeholder=' Enter Price ' />
                </div>
                <div className="item_input_row">
                 <label htmlFor="item_sp">Selling Price:</label><br />
-                <input type="number" name="item_sp" id="item_sp" />
+                <input type="number" name="item_sp" id="item_sp" placeholder=' Enter Selling Price ' />
                </div>
                <div className="qty_units">
                <div className="qty_units_row">
                 <label htmlFor="item_qty">Quantity:</label><br />
                 <button className="plus_item">+</button>
-                <input type="number" name="item_qty" id="item_qty" />
+                <input type="number" name="item_qty" id="item_qty" placeholder=' Enter Quantity'/>
                 <button className="minus_item">-</button>
                </div>
                <div className="qty_units_row">
