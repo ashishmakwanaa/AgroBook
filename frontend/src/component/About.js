@@ -3,7 +3,7 @@ const AboutUs = ({ show }) => {
   return (
     /*about us comment */
     <div className="relative bg-green-900 text-white p-6 md:p-10 lg:p-16 mt-6 transform transition-transform ease-out duration-1000">
-      <div className="absolute inset-0 bg-green-400 opacity-50 z-[-1]"></div>
+      <div className="absolute inset-0 bg-[#6AB187] opacity-50 z-[-1]"></div>
       <div className={`relative ${show ? 'opacity-100 animate-slide-in-up' : 'opacity-0'} mx-auto max-w-3xl md:max-w-4xl lg:max-w-5xl`}>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">About Us</h1>
         <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">

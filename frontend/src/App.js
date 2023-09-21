@@ -12,6 +12,7 @@ import FormInput from './Admin/FormInput';
 import { createContext, useState } from 'react';
 import CustomerEditInput from "./component/CustomerEditInput.js"
 import ChangePsw from './Admin/ChangePsw';
+import AddCustomer from './Admin/FormInput'
 
 import Itemtable from './component/Itemtable';
 const AppState = createContext();
@@ -41,6 +42,7 @@ function App() {
           <Route path="/FormInput" element={<FormInput />} />
           <Route path="/changePsw" element={<ChangePsw />} />
           <Route path="/itemtable" element={<Itemtable />} />
+          <Route path="/addCustomer" element={<AddCustomer/>}/>
           <Route path="/CustomerEditInput" element={<CustomerEditInput />} />
 
         </Routes>

@@ -1,59 +1,77 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Jost:ital,wght@1,300;1,400&family=Raleway:wght@300&family=Roboto:wght@300&display=swap');
 
-* {
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Armata&display=swap');
+
+
+*{
   margin: 0px;
   padding: 0px;
 }
-
-body {
-  background-color: rgb(175, 232, 188);
+body{
+  background-color: #ffffff;
 }
 
-.customer_form_details h3 {
+.customer_form_details h3{
+  color: #1F3F49;
   margin-top: 10px;
   text-align: center;
   font-size: 1.3rem;
-  font-family: "Josefin Sans";
+  font-family: "Arimo";
   font-weight: bolder;
 }
-
-div.customer_form {
+div.customer_form{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   margin-top: 1%;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .my_form {
   display: flex;
   flex-direction: column;
+  margin-top: 1%;
+}
+.phno_email{
+  display: flex;
 }
 
 .form-row {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   margin-bottom: 20px;
   padding: 1%;
   font-weight: bold;
 }
-
-.form-row input,
-label {
-  padding: 8px;
-  margin: 10px;
-  font-family: "Raleway", Arial;
+.form-row input,label{
+  padding: 10px;
+  margin: 15px;
+  font-family: "Armata", Arial;
 }
-
-.form-row input {
+.form-row input{
   width: 250px;
-  border-radius: 7px;
-  border: 3px solid rgb(175, 232, 188);
-  box-shadow: 3px 3px 5px -3px;
+  border: 1px solid #1F3F49;
   outline: none;
+  text-transform: capitalize;
 }
-
-#address {
+.form-row input:focus::placeholder {
+  color: rgb(244, 244, 244);
+}
+.form-row input:hover::placeholder {
+  color: rgb(244, 244, 244);
+}
+.form-row input:hover{
+  background-color: #6AB187;
+  color: white;
+}
+.form-row input:focus{
+  color: white;
+  font-weight: bold;
+}
+#address{
   width: 80%;
 }
 
@@ -71,50 +89,127 @@ label {
   }
 }
 
-.customer_form_btn button {
-  font-family: "Raleway";
+.form_btn{
   width: 150px;
-  padding: 5px;
+  padding: 10px;
+  font-weight: bold;
   border: 3px solid rgba(0, 0, 0, 0.18);
-  background-color: rgb(175, 232, 188);
-  border-radius: 5px;
+  color: white;
+  background-color: #6AB187;
   transition: all 0.3s;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  font-family: "Armata";
 }
 
-#form_btn:hover {
-  background-color: black;
-  color: rgb(175, 232, 188);
+
+.form_btn:hover{
+  background-color: #1F3F49;
+  color: white;
   font-weight: bold;
 }
 
-.customer_form_btn {
+#customer_form_btn{
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  font-family: "Armata";
 }
-
-/* .customer_head{
+  .item_form{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction:column;
+  }
+.item_form_head{
+  color: #1F3F49;
+  margin-top: 3%;
   text-align: center;
+  font-size: 1.3rem;
+  font-family: "Arimo";
   font-weight: bolder;
-  font-family:"Josefin Sans" ;
-  font-size: 24px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-decoration: underline;
-} */
-/* .form_row_edit {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  font-weight: bold;
-  white-space: nowrap;
 }
 
-.form_row_edit input[type="text"] {
-  width: 75%;
-  border-radius: 7px;
-  border: 3px solid rgb(175, 232, 188);
-  box-shadow: 3px 3px 5px -3px;
-  margin-bottom: 10px;
-} */
+.item_content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.qty_units{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qty_units_row input{
+  padding: 0.2rem;
+  margin-top: 5%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #1F3F49;
+}
+.item_img_input{
+  display: flex;
+}
+
+.item_input_row{
+  padding: 1.1rem;
+}
+
+.item_input_row input{
+  padding:0.2rem;
+  width: 100%;
+  margin-top: 2%;
+  border: 2px solid #1F3F49;
+  text-align: left;
+}
+#item_category{
+  padding:0.2rem;
+  width: 100%;
+  margin-top: 4%;
+  border: 2px solid #1F3F49;
+}
+@media screen and (min-width: 768px) {
+  .item_fomr {
+    flex-direction: row;
+  }
+
+  .item_input_row {
+    flex-direction: row;
+  }
+
+  .item_input_row input {
+    margin-right: 10px;
+  }
+}
+
+.plus_item, .minus_item{
+  border: 1px solid #1F3F49;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.plus_item:hover, .minus_item:hover{
+  background-color: #6AB187;
+  color: white;
+}
+#item_units{
+  padding: 0.2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 5%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #1F3F49;
+}
+
+.item_img_input{
+  margin-top: 10%;
+}
+
+/* darshil code */
 .edit_form {
   text-align: left;
 }

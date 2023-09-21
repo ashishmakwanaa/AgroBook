@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AppState } from '../App';
 import { useData } from '../useContext/DataContext';
 
-const Navbar = ({ links }) => {
+const Navbar = ({ links ,setAddCustomer,setContact,setitemList,setAddItem} ) => {
 
   const [open,setOpen] = useState(false);
 
@@ -14,18 +14,18 @@ const Navbar = ({ links }) => {
   const useAppState = useContext(AppState);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-
+  // const [customer,setCustomer]=new useState(false);
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
   return (
 <>
-    <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-white" style={{ zIndex: 100 }}>
+    <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-[#6AB187]" style={{ zIndex: 100 }}>
       <div className="container mx-auto md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <img src={Logo} alt="" style={{ height: "60px", width: "73px" }} />
-            <Link to="/"> <h1 className="my-auto text-2xl">AgroBook</h1></Link>
+            <img src={Logo} alt="" style={{ height: "60px", width: "73px",borderRadius:"50%" }} />
+            <Link to="/"> <h1 className="my-auto text-2xl text-white"> &nbsp; AgroBook</h1></Link>
           </div>
           <button className="md:hidden text-green-800 focus:outline-none " onClick={toggleMobileMenu}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -37,8 +37,8 @@ const Navbar = ({ links }) => {
         <ul className={`md:flex md:flex-row md:space-x-4 ${showMobileMenu ? 'block mt-2 md:mt-0 ' : 'hidden md:block md:mt-0'} `}>
           {!useAppState.login ?
             links.map((link) => (
-              <li key={link.name} className="text-xl">
-                <Link to={link.link} className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-green-600 hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
+              <li key={link.name} className="text-xl text-white">
+                <Link to={link.link} className={`hover:text-white p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-[#1F3F49] hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
                   {link.name}
                 </Link>
               </li>
@@ -46,7 +46,7 @@ const Navbar = ({ links }) => {
             :
             <li className="text-xl">
               <Link to="/dashboard" className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-[#1F3F49] hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
-                Dashboard
+                Home
               </Link>
             </li>
           }
@@ -56,27 +56,39 @@ const Navbar = ({ links }) => {
         {!useAppState.login ?
           <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
             <Link to="/signup">
-              <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 drop-shadow-xl">
+              <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 drop-shadow-xl">
                 Sign In
               </button>
             </Link>
             <Link to="/login">
-              <button className="bg-green-800 text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 drop-shadow-xl">
+              <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 drop-shadow-xl">
                 Log In
               </button>
             </Link>
           </div>
           :
           <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
-            <Link to="/FormInput">
-              <button className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
+            <Link to="/">
+              <button onClick={()=>{
+                setAddItem(false)
+                setContact(false)
+                setitemList(false)
+                setAddCustomer(true)
+                }} className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
                 Customer +
               </button>
             </Link>
-            <Link>
-              <button className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200">
-                <Link to="/">Item +</Link>
+            <Link to="/">
+              <button onClick={()=>{
+                setContact(false)
+                setitemList(false)
+                setAddCustomer(false)
+                setAddItem(true)
+                }} className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
+                Item +
               </button>
+            </Link>
+            <Link>
               <div className='bg-[#1F3F49] w-[50px] rounded-full ml-[320px] mt-[-43px] p-2 drop-shadow-xl'>
                 <p className='text-2xl text-white pl-2' onClick={()=>setOpen(!open)}>{data.charAt(0).toUpperCase()}</p>
               </div>
