@@ -1,7 +1,12 @@
 const mongoose = require("mongoose")
-const mongoURI = "mongodb://0.0.0.0:27017/Agrobook"
+const mongoURI = "mongodb+srv://mongodbatlas:mongodbatlas1234@cluster0.69lknpi.mongodb.net/AgroBook?retryWrites=true&w=majority"
 const connectToMongo = () => {
-    mongoose.connect(mongoURI).then(() => { console.log("Connct to Mongo Successfully") })
+    mongoose.connect(mongoURI,{
+        useNewUrlParser:true,
+        // useCreateIndex:true,
+        useUnifiedTopology:true
+        // useFindAndModify:false 
+    }).then(() => { console.log("Connct to Mongo Successfully") })
         .catch((err) => { console.log(err) })
 }
-module.exports = connectToMongo;
+module.exports = connectToMongo;
