@@ -12,6 +12,28 @@ body{
   background-color: #ffffff;
 }
 
+.customer_form input{
+  border-radius: 10px;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgba(10, 73, 3, 0.1));
+}
+
+.item_form label{
+  font-weight: bold;
+}
+
+.item_form input {
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgba(10, 73, 3, 0.1));
+  height: 45px;
+}
+
+.item_input_row{
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgba(10, 73, 3, 0.1));
+}
+.qty_units_row{
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgba(10, 73, 3, 0.1));
+
+}
+
 .customer_form_details h3{
   color: #1F3F49;
   margin-top: 10px;
@@ -95,6 +117,7 @@ div.customer_form{
   font-weight: bold;
   border: 3px solid rgba(0, 0, 0, 0.18);
   color: white;
+  border-radius: 15px;
   background-color: #6AB187;
   transition: all 0.3s;
   margin-left: 5%;
@@ -146,9 +169,10 @@ div.customer_form{
 .qty_units_row input{
   padding: 0.2rem;
   margin-top: 5%;
+  border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  border: 2px solid #1F3F49;
+  border: 1px solid #1F3F49;
 }
 .item_img_input{
   display: flex;
@@ -160,16 +184,19 @@ div.customer_form{
 
 .item_input_row input{
   padding:0.2rem;
+  border-radius: 10px;
   width: 100%;
   margin-top: 2%;
-  border: 2px solid #1F3F49;
+  border: 1px solid #1F3F49;
   text-align: left;
 }
 #item_category{
   padding:0.2rem;
   width: 100%;
+  height: 50px;
+  border-radius: 10px;
   margin-top: 4%;
-  border: 2px solid #1F3F49;
+  border: 1px solid #1F3F49;
 }
 @media screen and (min-width: 768px) {
   .item_fomr {
@@ -186,7 +213,7 @@ div.customer_form{
 }
 
 .plus_item, .minus_item{
-  border: 1px solid #1F3F49;
+  border: 1px solid #163843;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -200,9 +227,11 @@ div.customer_form{
   padding-left: 3rem;
   padding-right: 3rem;
   margin-top: 5%;
+  height: 50px;
+  border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  border: 2px solid #1F3F49;
+  border: 1px solid #1F3F49;
 }
 
 .item_img_input{

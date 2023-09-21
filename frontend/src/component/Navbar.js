@@ -84,7 +84,7 @@ const Navbar = ({ links ,setAddCustomer,setContact,setitemList,setAddItem} ) => 
                 setitemList(false)
                 setAddCustomer(false)
                 setAddItem(true)
-                }} className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
+                }} className="bg-[#1F3F49] drop-shadow-xl w-[120px] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
                 Item +
               </button>
             </Link>
