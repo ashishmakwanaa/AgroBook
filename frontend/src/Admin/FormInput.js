@@ -107,9 +107,9 @@ const FormInput = () => {
     const handleSubmit = async (e) => {
         const url = "http://localhost:4000/add/createcustomer";
         e.preventDefault();
-        console.log("jj")
-        // console.log(formData)
-        console.log("kkkk")        
+        // console.log("jj")
+        // // console.log(formData)
+        // console.log("kkkk")        
         try {
           const response = await fetch(url, {
             method: 'POST',
@@ -138,6 +138,7 @@ const FormInput = () => {
             });
           } else {
             // Handle errors if necessary
+            alert("Error Adding Customer");
             console.error('Error adding customer');
           }
         } catch (error) {

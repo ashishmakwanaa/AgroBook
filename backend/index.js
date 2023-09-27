@@ -2,7 +2,7 @@ const express = require("express")
 const connectToMongo = require("./db.js")
 connectToMongo();
 const auth = require("./routes/auth.js");
-const add=require("./routes/add.js")
+const add = require("./routes/add.js")
 const cors = require("cors")
 
 
@@ -22,7 +22,7 @@ app.use("/add", add);
 
 app.listen(port, (err) => {
     console.log(`Server Running on port ${port}`)
-})
+});
 // const express = require('express');
 // const mongoose = require('mongoose'); // Import mongoose
 // const bodyParser = require('body-parser');

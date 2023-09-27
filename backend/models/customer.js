@@ -1,17 +1,6 @@
 const mongoose = require("mongoose")
 // Schema For The Customer 
 const customerSchema = new mongoose.Schema({
-    // shopkeeperid:String, // Unique For All The Shopkeepers 
-    // firstname:String,
-    // middlename:String,
-    // lastname:String,
-    // address:String,
-    // city:String,
-    // pincode:String,
-    // state:String,
-    // country:String,
-    // email:String,
-    // phoneno:String
     shopkeeperid: {
         type: String,
         require: true
@@ -59,10 +48,7 @@ const customerSchema = new mongoose.Schema({
         require: true,
         unique: true
     }
-
 });
-
-// Creating A Mongoose Model For The Customer Collection 
 
 const Customer = mongoose.model('Customer',customerSchema);
 
