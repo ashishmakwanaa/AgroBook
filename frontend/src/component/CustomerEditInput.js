@@ -27,7 +27,7 @@ const CustomerEditInput = () => {
             <input class="edir_address" type="text" name="Address" id="" placeholder="Address" required />
           </div>
           <div className="form_row_edit">
-            <label htmlFor="">City : </label>
+            <label htmlFor="">City : </label><br/>
             <input type="text" name="City" id="" placeholder="City" required />
           </div>
           <div className="form_row_edit">
@@ -35,7 +35,7 @@ const CustomerEditInput = () => {
             <input type="text" name="Pincode" id="" placeholder="Pin Code" required />
           </div>
           <div className="form_row_edit">
-            <label htmlFor="">State : </label>
+            <label htmlFor="">State : </label><br/>
             <input type="text" name="State" id="" placeholder="State" required />
           </div>
           <div className="form_row_edit">
@@ -47,7 +47,7 @@ const CustomerEditInput = () => {
             <input type="number" name="phone_no" id="" placeholder="Phone No" required />
           </div>
           <div className="form_row_edit">
-            <label htmlFor="">E-Mail : </label>
+            <label htmlFor="">E-Mail : </label><br/>
             <input type="email" name="E-Mail" id="" placeholder="E-Mail" required />
           </div>
           <div className="center_aligned">
