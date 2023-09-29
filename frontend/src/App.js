@@ -44,9 +44,7 @@ function App() {
           <Route path="/itemtable" element={<Itemtable />} />
           <Route path="/addCustomer" element={<AddCustomer />} />
           <Route path="/CustomerEditInput" element={<CustomerEditInput />} />
-          
-
-
+  
         </Routes>
       </div>
     </AppState.Provider>

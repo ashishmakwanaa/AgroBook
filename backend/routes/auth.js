@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User.js")
+// const Customer =require("../models/customer.js")
 const { body, validationResult } = require('express-validator');
-
-
 
 
 //ROUTE 1 : Create a User and store in database using :POST "/auth/createuser". it Does Not require authentication
@@ -15,7 +14,7 @@ router.post("/createuser", [
     body("password", "Password length must be atlist six character").isLength({ min: 6 })
 
 ], async (req, res) => {
-    // console.log(req.body);
+  
 
     //destructure req.body
     const { name, email, password } = req.body;

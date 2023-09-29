@@ -100,6 +100,52 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
 
         </div>
 
+
+        {!useAppState.login ?
+          <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
+            <Link to="/signup">
+              <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 drop-shadow-xl">
+                Sign In
+              </button>
+            </Link>
+            <Link to="/login">
+              <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 drop-shadow-xl">
+                Log In
+              </button>
+            </Link>
+          </div>
+          :
+          <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
+            <Link to="/">
+              <button onClick={()=>{
+                setAddItem(false)
+                setContact(false)
+                setitemList(false)
+                setAddCustomer(true)
+                }} className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
+                Customer +
+              </button>
+            </Link>
+            <Link to="/">
+              <button onClick={()=>{
+                setContact(false)
+                setitemList(false)
+                setAddCustomer(false)
+                setAddItem(true)
+                }} className="bg-[#1F3F49] drop-shadow-xl text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 ">
+                Item +
+              </button>
+            </Link>
+            <Link>
+              <div className='bg-[#1F3F49] w-[50px] rounded-full ml-[320px] mt-[-43px] p-2 drop-shadow-xl'>
+                <p className='text-2xl text-white pl-2' onClick={()=>setOpen(!open)}>{data.charAt(0).toUpperCase()}</p>
+              </div>
+            </Link>
+          </div>
+        }
+         
+
+
       </div>
 
       {open && (
