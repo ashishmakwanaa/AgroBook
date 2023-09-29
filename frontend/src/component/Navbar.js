@@ -20,12 +20,12 @@ const Navbar = ({ links ,setAddCustomer,setContact,setitemList,setAddItem} ) => 
   };
   return (
 <>
-    <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-[#6AB187]" style={{ zIndex: 100 }}>
+    <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-[#579571]" style={{ zIndex: 100 }}>
       <div className="container mx-auto md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <img src={Logo} alt="" style={{ height: "60px", width: "73px",borderRadius:"50%" }} />
-            <Link to="/"> <h1 className="my-auto text-2xl text-white"> &nbsp; AgroBook</h1></Link>
+            <img src={Logo} alt="" style={{ height: "50px", width: "60px"}} className='mix-blend-multiply' />
+            <Link to="/"> <h1 className="my-auto text-3xl text-white font-bold font-[Arimo]"> &nbsp; AgroBook</h1></Link>
           </div>
           <button className="md:hidden text-green-800 focus:outline-none " onClick={toggleMobileMenu}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,7 +38,7 @@ const Navbar = ({ links ,setAddCustomer,setContact,setitemList,setAddItem} ) => 
           {!useAppState.login ?
             links.map((link) => (
               <li key={link.name} className="text-xl text-white">
-                <Link to={link.link} className={`hover:text-white p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-[#1F3F49] hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
+                <Link to={link.link} className={`hover:text-white p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-[#1F3F49] font-bold hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
                   {link.name}
                 </Link>
               </li>
@@ -57,7 +57,7 @@ const Navbar = ({ links ,setAddCustomer,setContact,setitemList,setAddItem} ) => 
           <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
             <Link to="/signup">
               <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 drop-shadow-xl">
-                Sign In
+                Sign Up
               </button>
             </Link>
             <Link to="/login">

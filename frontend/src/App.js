@@ -13,8 +13,9 @@ import { createContext, useState } from 'react';
 import CustomerEditInput from "./component/CustomerEditInput.js"
 import ChangePsw from './Admin/ChangePsw';
 import AddCustomer from './Admin/FormInput'
-
 import Itemtable from './component/Itemtable';
+import ForgotPsw from './Admin/ForgotPsw';
+import ResetPsw from './Admin/ResetPsw';
 const AppState = createContext();
 
 
@@ -41,8 +42,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/FormInput" element={<FormInput />} />
           <Route path="/changePsw" element={<ChangePsw />} />
+          <Route path="/forgotpassword/:id/:token" element={<ResetPsw />} />
           <Route path="/itemtable" element={<Itemtable />} />
           <Route path="/addCustomer" element={<AddCustomer/>}/>
+          <Route path="/forgot" element={<ForgotPsw/>}/>
           <Route path="/CustomerEditInput" element={<CustomerEditInput />} />
 
         </Routes>

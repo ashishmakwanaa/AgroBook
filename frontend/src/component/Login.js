@@ -17,6 +17,7 @@ const Login = () => {
 
   
   const { setData } = useData();
+  const {setPassword} = useData();
 
   async function validateData() {
     const url = "http://localhost:4000/auth/login";
@@ -30,12 +31,13 @@ const Login = () => {
     const data = await res.json();
     console.log(data);
     console.log(data["message"]);
-    console.log(data.data.user.username);
-    
+    console.log(data.data.user.username); 
+  
     const username = data.data.user.username;
+    const password = data.data.user.psw;
 
     setData(username);
-
+    setPassword(password);
 
     if (res.ok) {
       useAppState.setLogin(true);
@@ -125,10 +127,16 @@ const Login = () => {
             Log In
           </button>
         </form>
-        <p className="mt-4 text-center p-2 text-2xl text-gray-700 text-sm">
+        <p className="mt-4 text-center font-bold p-2 text-2xl text-gray-700 text-sm">
           Do not have account ?
           <Link to="/signup" className="ml-1 text-green-500 font-semibold">
             Sign Up
+          </Link>
+        </p>
+        <p className=" text-center font-bold text-2xl text-gray-700 text-sm">
+          Forgot Password
+          <Link to="/forgot" className=" hover:underline decoration-4 ml-1 text-green-500 font-semibold">
+            CLICK HERE
           </Link>
         </p>
       </div>
