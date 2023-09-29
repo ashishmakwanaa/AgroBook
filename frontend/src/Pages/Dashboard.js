@@ -27,7 +27,7 @@ export default function Dashboard() {
     const [addItem, setAddItem] = useState(false);
     const [categoryList, setcategoryList] = useState(false);
 
-    
+
     return (
         <>
             <div className='md:h-20 h-12'>
@@ -59,7 +59,7 @@ export default function Dashboard() {
 
                         <tr className='hover:uppercase mt-4 border-b-2 hover:bg-gray-300  border-slate-500 h-20 rounded-3xl flex items-center justify-center  cursor-pointer'>
                             Recent
-
+                        </tr>
                         <tr className='hover:uppercase mt-4 border-b-2 hover:bg-gray-300  border-slate-500 h-20  flex items-center justify-center  cursor-pointer'>
                             <Link to="/" onClick={() => {
                                 setAddItem(false)

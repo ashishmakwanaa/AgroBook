@@ -101,7 +101,7 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
         </div>
 
 
-        {!useAppState.login ?
+        {/* {!useAppState.login ?
           <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
             <Link to="/signup">
               <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 drop-shadow-xl">
@@ -142,7 +142,7 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
               </div>
             </Link>
           </div>
-        }
+        } */}
          
 
 
