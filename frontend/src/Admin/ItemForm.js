@@ -24,6 +24,19 @@ const ItemForm = ({ setcategoryList }) => {
 
 // const ItemForm = ({ setcategoryList}) => {
 
+    
+
+// const ItemForm = ({ setcategoryList}) => {
+
+//     const navigateTo = useNavigate();
+//     const handleGoToCategory = (event) => {
+//         const selectedOption = event.target.value;
+//         if (selectedOption == 'AddNew') {
+//             navigateTo("/");
+//         }
+//     }
+    
+
 //     const navigateTo = useNavigate();
 //     const handleGoToCategory = (event) => {
 //         const selectedOption = event.target.value;
