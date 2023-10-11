@@ -34,7 +34,7 @@ const HomePage = () => {
       const aboutSection = document.querySelector('.bg-green-400');
       if (aboutSection && window.scrollY > aboutSection.offsetTop - window.innerHeight / 2) {
         setshowAbout(true);
-      }
+      } 
 
     };
 

@@ -19,6 +19,15 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
     setShowMobileMenu(!showMobileMenu);
   };
   return (
+
+<>
+    <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-[#579571]" style={{ zIndex: 100 }}>
+      <div className="container mx-auto md:flex md:items-center md:justify-between">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <img src={Logo} alt="" style={{ height: "50px", width: "60px"}} className='mix-blend-multiply' />
+            <Link to="/"> <h1 className="my-auto text-3xl text-white font-bold font-[Arimo]"> &nbsp; AgroBook</h1></Link>
+
     <>
       <div className="shadow-md fixed top-0 left-0 right-0 p-2 bg-[#6AB187]" style={{ zIndex: 100 }}>
         <div className="container mx-auto md:flex md:items-center md:justify-between">
@@ -32,7 +41,16 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
+
           </div>
+
+
+        <ul className={`md:flex md:flex-row md:space-x-4 ${showMobileMenu ? 'block mt-2 md:mt-0 ' : 'hidden md:block md:mt-0'} `}>
+          {!useAppState.login ?
+            links.map((link) => (
+              <li key={link.name} className="text-xl text-white">
+                <Link to={link.link} className={`hover:text-white p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-[#1F3F49] font-bold hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
+                  {link.name}
 
           <ul className={`md:flex md:flex-row md:space-x-4 ${showMobileMenu ? 'block mt-2 md:mt-0 ' : 'hidden md:block md:mt-0'} `}>
             {!useAppState.login ?
@@ -47,6 +65,7 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
               <li className="text-xl">
                 <Link to="/dashboard" className={`hover:text-green-800 p-2 ${showMobileMenu ? 'block  mt-4' : ''} hover:bg-[#1F3F49] hover:rounded-t-2xl hover:rounded-t-2xl hover:text-white duration-200`}>
                   Home
+
                 </Link>
               </li>
             }
@@ -105,7 +124,7 @@ const Navbar = ({ links, setAddCustomer, setContact, setitemList, setAddItem, se
           <div className={`md:block ${showMobileMenu ? 'block mt-2 md:mt-0' : 'hidden md:block md:mt-0'}`}>
             <Link to="/signup">
               <button className="bg-[#1F3F49] text-white px-5 py-2 rounded-full hover:bg-white hover:text-green-800 hover:border-2 duration-200 mx-2 drop-shadow-xl">
-                Sign In
+                Sign Up
               </button>
             </Link>
             <Link to="/login">
