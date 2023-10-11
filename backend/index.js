@@ -1,8 +1,11 @@
-const express = require("express")
-const connectToMongo = require("./db.js")
+const express = require("express");
+const connectToMongo = require("./db.js");
 connectToMongo();
 const update = require("./routes/update.js");
 const auth = require("./routes/auth.js");
+
+const addCategory = require("./routes/addCategory.js");
+const cors = require("cors");
 const add = require("./routes/add.js");
 const Delete = require("./routes/delete.js");
 const cors = require("cors")
@@ -21,7 +24,7 @@ const store = new MongoDBSession({
 });
 
 //to get data from the client we need to make a cors beetween two
-app.use(cors())
+app.use(cors());
 
 // this is the code for the sessions..
 app.use(
@@ -96,6 +99,11 @@ app.use(express.json());
 
 //Available Routes
 app.use("/auth", auth);
+app.use("/addCategory", addCategory);
+
+app.listen(port, (err) => {
+  console.log(`Server Running on port ${port}`);
+});
 app.use("/add", add);
 app.use("/update", update);
 app.use("/delete", Delete);
