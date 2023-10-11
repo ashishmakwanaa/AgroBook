@@ -14,6 +14,8 @@ import CustomerEditInput from "./component/CustomerEditInput.js"
 import ChangePsw from './Admin/ChangePsw';
 import AddCustomer from './Admin/FormInput'
 import Itemtable from './component/Itemtable';
+import CustomerList from './Pages/CustomerList';
+import ItemList from './Pages/ItemList';
 
 const AppState = createContext();
 
@@ -44,7 +46,8 @@ function App() {
           <Route path="/itemtable" element={<Itemtable />} />
           <Route path="/addCustomer" element={<AddCustomer />} />
           <Route path="/CustomerEditInput" element={<CustomerEditInput />} />
-  
+          <Route path="/CustomerList" element={<CustomerList/>}/>
+          <Route path="/ItemList" element={<ItemList/>}/>
         </Routes>
       </div>
     </AppState.Provider>
