@@ -136,7 +136,7 @@ const Login = () => {
         <p className=" text-center font-bold text-2xl text-gray-700 text-sm">
           Forgot Password
           <Link to="/forgot" className=" hover:underline decoration-4 ml-1 text-green-500 font-semibold">
-            CLICK HERE
+            Click Here
           </Link>
         </p>
       </div>

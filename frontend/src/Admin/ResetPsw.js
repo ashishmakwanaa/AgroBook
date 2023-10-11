@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Logo from '../images/Agro.png';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import forgetBg from '../images/forgetBg.jpg';
 
 
 const ResetPsw = () => {
@@ -74,16 +75,16 @@ const ResetPsw = () => {
     }
 
   return (
-    <div>
-       <div className="  flex flex-row justify-between items-center mx-2 my-2 ">
+    <div className='bg-cover bg-no-repeat bg-center relative h-screen' style={{ backgroundImage: `url(${forgetBg})` }}>
+       <div className="  flex flex-row justify-between items-center mx-2">
   <div className="flex items-center">
     <img src={Logo} alt="" style={{ height: "50px", width: "60px" }} className='mix-blend-multiply' />
     <Link to="/"><h1 className="ml-2 text-3xl text-black font-bold font-[Arimo]">AgroBook</h1></Link>
   </div>
-  <button onClick={()=>navigate('/forgot')} className="relative ml-auto text-center px-4 border-2 border-green-300 p-2 sm:rounded-sm lg:rounded-full md:rounded-md hover:bg-green-300 hover:text-black hover:duration-700 bg-transparent transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:rounded-full before:origin-top-left before:scale-x-0 before:bg-green-300 before:transition-transform before:duration-500 before:content-[''] before:hover:scale-x-100"><ion-icon name="arrow-undo"></ion-icon> Back to Send Link</button>
+  <button onClick={()=>navigate('/forgot')} className="relative ml-auto text-center px-4 border-2 border-green-800 p-2 sm:rounded-sm lg:rounded-full md:rounded-md hover:bg-green-800 hover:text-white hover:duration-700 hover:shadow-lg"><ion-icon name="arrow-undo"></ion-icon> Back to Send Link</button>
 </div>
-<div className="bg-white rounded-lg p-6 shadow-lg sm:w-full md:w-96 lg:w-96  xl:w-96 mx-auto mt-20 drop-shadow-2xl ">
-  <h2 className="font-bold font-[Poppins] text-3xl text-center tracking-wide"> RESET PASSWORD</h2>
+<div className="bg-white rounded-lg p-6 shadow-lg sm:w-full md:w-96 lg:w-96  xl:w-96 mx-auto mt-32 drop-shadow-2xl ">
+  <h2 className="font-bold font-[Poppins] text-3xl text-center tracking-wide underline"> Reset Password</h2>
   
   <form onSubmit={handleSubmit}>
     <div className="mb-4 mt-8">
