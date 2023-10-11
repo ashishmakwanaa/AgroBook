@@ -7,5 +7,9 @@
 
 .my_side_bar{
     position: fixed;
-    top:8%;
+    top:7%;
+}
+
+.customer_link{
+    color:blue;
 }

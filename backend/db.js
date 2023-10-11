@@ -10,4 +10,4 @@ const connectToMongo = () => {
     }).then(() => { console.log("Connct to Mongo Successfully") })
         .catch((err) => { console.log(err) })
 }
-module.exports = connectToMongo;
+module.exports = connectToMongo;
