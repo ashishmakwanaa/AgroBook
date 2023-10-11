@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./App.css"
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +20,16 @@ const ItemForm = ({ setcategoryList }) => {
         }
     )
 
+
+// const ItemForm = ({ setcategoryList}) => {
+
+//     const navigateTo = useNavigate();
+//     const handleGoToCategory = (event) => {
+//         const selectedOption = event.target.value;
+//         if (selectedOption == 'AddNew') {
+//             navigateTo("/");
+//         }
+//     }
     
     const handleSubmit = async (e) => {
         const url = "http://localhost:4000/add/createitem";
@@ -55,6 +68,7 @@ const ItemForm = ({ setcategoryList }) => {
         }
     };
 
+
     const navigateTo = useNavigate();
     const handleGoToCategory = (event) => {
         const selectedOption = event.target.value;
@@ -75,8 +89,9 @@ const ItemForm = ({ setcategoryList }) => {
                             <label htmlFor="name_items">Name: </label><br />
                             <input
                                 type="text"
+                                className="capitalize"
                                 name="name_item" id="name_item"
-                                value={formData.itemane}
+                                value={formData.itemname}
                                 onChange={(e) => setFormData({ ...formData, itemname: e.target.value })}
                             />
                         </div>

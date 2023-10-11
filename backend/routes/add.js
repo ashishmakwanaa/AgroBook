@@ -62,29 +62,7 @@ router.post("/createcustomer", [
         console.log(error.message)
         res.status(500).json({ message: "Internal server error" });
     }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 router.post("/createitem", [
 
@@ -97,8 +75,8 @@ router.post("/createitem", [
 ], async (req, res) => {
     // console.log(req.body);
     
-    console.log(req.body);
-    console.log("dar");
+    //console.log(req.body);
+    //console.log("dar");
     //destructure req.body
     const { itemname,itemcategory,costprice,sellingprice,quantity,units } = req.body;
 
@@ -136,6 +114,29 @@ router.post("/createitem", [
         console.log(error.message)
         res.status(500).json({ message: "Internal server error" });
     }
-})
+});
+
+router.get('/fetch_customers',async (req,res)=> {
+    try{
+        const customers = await Customer.find({});
+        res.json(customers);
+    }
+    catch(error){
+        console.error("Error Fetching Customers",error);
+        res.status(500).json({error:"Internal Server Error"});
+    }
+});
+
+router.get('/fetch_items',async (req,res) => {
+    try{
+        const items = await Item.find({});
+        res.json(items);
+    }
+    catch(error)
+    {
+       console.error("Error Fetching Items");
+       res.status(500).json({error:"Internal Server Error"}); 
+    }
+});
 
 module.exports = router

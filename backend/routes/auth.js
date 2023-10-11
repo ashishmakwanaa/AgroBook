@@ -51,9 +51,6 @@ router.post("/createuser", [
     }
 })
 
-
-
-
 //ROUTE 2 : Authenticate a user  :POST "/auth/login". it Does Not require login
 router.post("/login", [
 

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 function Itemtable() {
+
     const data = [
         { IID: 1, name: "Pipe", Price: 200, Quentity: 10, Total: 2000 },
         { IID: 2, name: "Seed", Price: 750, Quentity: 20, Total: 14000 },
@@ -12,6 +13,20 @@ function Itemtable() {
         { IID: 7, name: "prestiside", Price: 800, Quentity: 30, Total: 24000 },
         { IID: 8, name: "prestiside", Price: 800, Quentity: 30, Total: 24000 },
     ]
+    // async function fetchitem(e){
+    //     const url = "http://localhost:4000/add/createitem";
+    //     const response = await fetch(url)
+    //     const data = response.data
+    //     console.log(data)
+    // }
+    // useEffect(() => {
+    //     try{
+    //         fetchitem();
+    //     }
+    //     catch(e){
+    //         window.alert(e)
+    //     }
+    // })
     // const [date, setDate] = useState();
     var today = new Date();
     var date = today.getDay() + '-' + today.getMonth() + '-' + today.getFullYear();
