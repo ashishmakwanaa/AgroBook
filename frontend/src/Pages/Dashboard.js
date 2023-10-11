@@ -7,6 +7,8 @@ import Contact from '../component/Contact.js';
 import AddCustomer from '../Admin/FormInput.js';
 import ItemForm from '../Admin/ItemForm.js';
 import CategoryList from './CategoryList.js';
+import CustomerList from './CustomerList.js';
+import ItemList from './ItemList.js';
 // import { Link } from 'react-router-dom'
 export default function Dashboard() {
     const links = [
@@ -19,7 +21,7 @@ export default function Dashboard() {
 
     const [history, sethistory] = useState(false);
     const [contact, setContact] = useState(false);
-    const [customerList, secustomerList] = useState(false);
+    const [customerList, setcustomerList] = useState(false);
     const [itemList, setitemList] = useState(false);
     const [recent, setrecent] = useState(false);
     const [invoice, setnvoice] = useState(false);
@@ -31,7 +33,7 @@ export default function Dashboard() {
     return (
         <>
             <div className='md:h-20 h-12'>
-                <Navbar links={links} setAddCustomer={setAddCustomer} setitemList={setitemList} setContact={setContact} setAddItem={setAddItem} setcategoryList={setcategoryList} />
+                <Navbar links={links} setAddCustomer={setAddCustomer} setitemList={setitemList} setContact={setContact} setAddItem={setAddItem} setcategoryList={setcategoryList} setcustomerList = {setcustomerList} />
             </div>
             <div className='flex flex-row mb-2 '>
                 <div className='md:w-1/6 w-2/4 bg-gray-200 border-2 p-4 my_side_bar' >
@@ -43,7 +45,16 @@ export default function Dashboard() {
                             History
                         </tr>
                         <tr className=' hover:uppercase mt-4 border-b-2 hover:bg-gray-300 border-slate-500 h-20 rounded-3xl flex items-center justify-center  cursor-pointer' >
+                        <Link to="/" onClick={() => {
+                                setAddItem(false)
+                                setContact(false)
+                                setAddCustomer(false)
+                                setcategoryList(false)
+                                setitemList(false)
+                                setcustomerList(true);
+                            }}>
                             Customer List
+                            </Link>
                         </tr>
                         <tr className=' hover:uppercase mt-4 border-b-2 hover:bg-gray-300 border-slate-500 h-20 rounded-3xl flex items-center justify-center cursor-pointer'>
                             <Link to="/" onClick={() => {
@@ -51,6 +62,7 @@ export default function Dashboard() {
                                 setContact(false)
                                 setAddCustomer(false)
                                 setcategoryList(false)
+                                setcustomerList(false);
                                 setitemList(true)
                             }}>
                                 Item List
@@ -59,13 +71,14 @@ export default function Dashboard() {
 
                         <tr className='hover:uppercase mt-4 border-b-2 hover:bg-gray-300  border-slate-500 h-20 rounded-3xl flex items-center justify-center  cursor-pointer'>
                             Recent
-
+                        </tr>
                         <tr className='hover:uppercase mt-4 border-b-2 hover:bg-gray-300  border-slate-500 h-20  flex items-center justify-center  cursor-pointer'>
                             <Link to="/" onClick={() => {
                                 setAddItem(false)
                                 setitemList(false)
                                 setAddCustomer(false)
                                 setContact(false)
+                                setcustomerList(false);
                                 setcategoryList(true)
                             }}>
                                 categoryList
@@ -94,7 +107,7 @@ export default function Dashboard() {
                     </table>
                 </div>
                 <div className='md:w-3/4 w-2/4 ml-72'>
-                    {itemList ? <Itemtable /> : contact ? <Contact /> : addCustomer ? <AddCustomer /> : addItem ? <ItemForm /> : categoryList ? <CategoryList /> : null}
+                    {itemList ? <Itemtable /> : contact ? <Contact /> : addCustomer ? <AddCustomer /> : addItem ? <ItemForm /> : categoryList ? <CategoryList />: customerList ? <CustomerList /> : null}
                 </div>
             </div>
         </>
