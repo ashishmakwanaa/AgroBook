@@ -7,6 +7,24 @@
 
 .my_side_bar{
     position: fixed;
+    top:8%;
+}
+
+.category_del_btn{
+    background-color: #1F3F49;
+    color: white;
+    padding: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 5px;
+}
+
+.category_del_btn:hover{
+    background-color: #ce1515;
+}
+.category_row{
+    cursor: pointer;
+}
     top:7%;
 }
 
