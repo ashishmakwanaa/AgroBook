@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import "./App.css"
@@ -22,6 +21,19 @@ const ItemForm = ({ setcategoryList }) => {
 
 
 // const ItemForm = ({ setcategoryList}) => {
+
+    
+
+// const ItemForm = ({ setcategoryList}) => {
+
+//     const navigateTo = useNavigate();
+//     const handleGoToCategory = (event) => {
+//         const selectedOption = event.target.value;
+//         if (selectedOption == 'AddNew') {
+//             navigateTo("/");
+//         }
+//     }
+    
 
 //     const navigateTo = useNavigate();
 //     const handleGoToCategory = (event) => {
