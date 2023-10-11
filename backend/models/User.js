@@ -9,7 +9,7 @@ const UserSchema = new Schema({
         type: String,
         require: true,
         unique: true
-    },
+    },  
     password: {
         type: String,
         require: true
@@ -17,6 +17,9 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: new Date()
+    },
+    verifytoken:{
+        type :String,
     }
 })
 

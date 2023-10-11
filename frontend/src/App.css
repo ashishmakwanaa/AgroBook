@@ -25,3 +25,9 @@
 .category_row{
     cursor: pointer;
 }
+    top:7%;
+}
+
+.customer_link{
+    color:blue;
+}
